@@ -1,0 +1,18 @@
+<h1>All Articles</h1>
+
+<table>
+  <tr>
+  	<td>Title</td>
+  	<td>Body</td>
+  </tr>
+  	<% @articles.each { |a| %>
+    <tr>
+  	<td> <%= link_to a.title , article_path(a), class: "article_title" %> </td>
+  	<td> <%= a.body %> </td>
+  	</tr>
+  	<% } %>
+</table>
+
+<br>
+<br>
+<%= link_to "Create a New Article", new_article_path, class:"new_article" %>

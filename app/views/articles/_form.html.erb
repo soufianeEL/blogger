@@ -1,0 +1,14 @@
+<%= form_for(@article) do |f| %>
+
+    <% @article.errors.full_messages.each do |error| %>
+    	<%= error %>
+    <% end %>
+
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+
+	<%= f.label :body %>
+	<%= f.text_area :body %>
+
+	<%= f.submit %>
+<% end %>
