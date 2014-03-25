@@ -12,5 +12,13 @@
 </p>
 <%= yield %>
 
+<br>
+<br>
+<% if logged_in? %>
+	<%= "Logged in as #{current_user.email}" %>
+<% else %>
+	Logged out
+<% end %>
+
 </body>
 </html>

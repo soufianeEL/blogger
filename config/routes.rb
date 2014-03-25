@@ -5,7 +5,7 @@ Blogger::Application.routes.draw do
   end
 
   resources :tags
-
+  resources :authors
 
   root to: "articles#index"
 

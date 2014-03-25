@@ -5,7 +5,7 @@ Tags:
   <% end %>
 <br>
 <% if @article.image.exists? %>
-	<%= image_tag @article.image.url(:medium) %>
+	<%= image_tag @article.image.url %>
 <% end %>
 <br>
 <p>
@@ -23,4 +23,4 @@ Tags:
 
 <%= render partial: 'comments/form' %>
 
-<%= link_to "<< back to article list" , articles_path %>
+<%= link_to "<< back to article list" , articles_path, class:"new_article" %>
