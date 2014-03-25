@@ -1,10 +1,16 @@
-<%= @article.title %>
+<h1><%= @article.title %></h1>
+Tags:
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
 <br>
-<%= @article.body %>
+<p>
+	<h2><%= @article.body %></h2>
+</p>
 <br>
 <br>
-<%= link_to "edit" , edit_article_path(@article) %>
-<%= link_to "**delete this article**", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
+<%= link_to "** edit **" , edit_article_path(@article) %><br>
+<%= link_to "** delete this article **", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
 <br>
 <hr>
 
