@@ -4,6 +4,10 @@ Tags:
     <%= link_to tag.name, tag_path(tag) %>
   <% end %>
 <br>
+<% if @article.image.exists? %>
+	<%= image_tag @article.image.url(:medium) %>
+<% end %>
+<br>
 <p>
 	<h2><%= @article.body %></h2>
 </p>
