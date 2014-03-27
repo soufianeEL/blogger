@@ -1,7 +1,9 @@
-Comment by <%= comment.author_name %>
-<div id="<%= comment.id %>" style=" border:2px dotted #2B445C; margin: 0 60px;">
-	<%= comment.body %>
-	<br>
+<div id="container">
+	Comment by <%= comment.author_name %> :
+	<div id="<%= comment.id %>" style=" margin: 0 60px;">
+		<h5><%= comment.body %></h5>
+		<br>
+	</div>
 	Posted <%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %> later
+	<br>
 </div>
-<br>

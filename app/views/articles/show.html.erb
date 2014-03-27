@@ -4,6 +4,7 @@ Tags:
     <%= link_to tag.name, tag_path(tag) %>
   <% end %>
 <br>
+<div id="content">
 <% if @article.image.exists? %>
 	<%= image_tag @article.image.url %>
 <% end %>
@@ -14,10 +15,11 @@ Tags:
 <br>
 <br>
 <% if logged_in? %>
-	<%= link_to "** edit **" , edit_article_path(@article) %><br>
-	<%= link_to "** delete this article **", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
+	<%= link_to "** edit **" , edit_article_path(@article), id:"button" %><br><br>
+	<%= link_to "** delete this article **", article_path(@article),id:"button" ,method: :delete, data: {confirm: "Really delete the article?"} %><br>
 	<br>
 <% end %>
+</div>
 <hr>
 
 <h3>Comments (<%= @article.comments.size %>)</h3>
