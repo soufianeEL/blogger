@@ -13,9 +13,11 @@ Tags:
 </p>
 <br>
 <br>
-<%= link_to "** edit **" , edit_article_path(@article) %><br>
-<%= link_to "** delete this article **", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
-<br>
+<% if logged_in? %>
+	<%= link_to "** edit **" , edit_article_path(@article) %><br>
+	<%= link_to "** delete this article **", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"} %>
+	<br>
+<% end %>
 <hr>
 
 <h3>Comments (<%= @article.comments.size %>)</h3>
